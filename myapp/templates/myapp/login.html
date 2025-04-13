@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Background image -->
+    <div id="threejs-background"></div>
     <div class="container">
         <!-- Title -->
         <h1 class="title">Login</h1>
@@ -29,5 +31,6 @@
         <p class="forgot-pass">Forgot your password? <a href="{% url 'forgotPassword' %}" class="click-here">Click Here!</a></p>
     </div>
 
+    <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
 </body>
 </html>

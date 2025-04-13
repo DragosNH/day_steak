@@ -27,7 +27,7 @@ scene.background = new THREE.Color('#48274f');
 const geometry = new THREE.TorusGeometry(1.4, 0.2, 16, 50);
 const material = new THREE.MeshBasicMaterial({ color: 0xb7d8b0, wireframe: true });
 // -- Spehere --
-const spehereGeometry = new THREE.SphereGeometry( 0.8, 32, 16 );
+const spehereGeometry = new THREE.SphereGeometry( 0.8, 15, 20 );
 const spehereMaterial = new THREE.MeshBasicMaterial({color: 0xb7d8b0, wireframe: true })
 
 // Shapes
