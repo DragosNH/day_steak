@@ -1,31 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule my day</title>
-    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/login.css' %}">
     <!-- --------- Fonts imports --------- -->
      <!-- Winky Rough -->
     <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <!-- Fredericka the Great -->
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-
+</head>
 <body>
-    <!-- title -->
-    <h1 class="title">Are you ready to "<span class="shedule">Schedule your day</span>"?</h1>
-
-    <div class="container">
-        <p class="txt">Do you already have an account?</p>
-        <button class="btn"><a href="{% url 'login' %}">Log In</a></button>
-        <p class="txt">Don't have an account yet?</p>
-        <button class="btn"><a href="">Sign Up</a></button>
-    </div>
-
-    <script src="{% static 'myapp/js/script.js' %}"></script>
+    <h1 class="title">Login</h1>
 </body>
-
 </html>

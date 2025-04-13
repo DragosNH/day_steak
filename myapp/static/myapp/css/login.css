@@ -1,0 +1,26 @@
+:root {
+    /* Purples */
+    --purply-magenta: #48274f;
+    --darker-pruply: #38223c;
+    --lighter-purply: #57365e;
+
+    /* Yellows */
+    --yellowish-gren: #b7d8b0;
+    --darker-yellowish: #8bb782;
+    --lighter-yellowish: #f3f8f2;
+}
+
+body{
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Main font "Winky Rough" */
+    font-family: "Winky Rough", sans-serif;
+    /* Colors */
+    background-color: var(--purply-magenta);
+    color: var(--yellowish-gren);
+    /* Height of the page */
+    height: 100vh;
+}

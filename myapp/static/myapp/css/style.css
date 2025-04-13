@@ -50,8 +50,11 @@ body{
         font-size: 14pt;
         font-weight: bold;
         background-color: var(--yellowish-gren);
-        color: var(--purply-magenta);
         border: 5px solid var(--darker-yellowish);
+        & a{
+            color: var(--purply-magenta);
+            text-decoration: none;
+        }
     }
     & .btn:active{
         color: var(--lighter-purply);
