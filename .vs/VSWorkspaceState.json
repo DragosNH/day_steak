@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\myapp",
+    "\\myapp\\static",
+    "\\myapp\\templates",
+    "\\myapp\\templates\\myapp",
+    "\\steak_day"
+  ],
+  "SelectedNode": "\\steak_day\\settings.py",
+  "PreviewInSolutionExplorer": false
+}
