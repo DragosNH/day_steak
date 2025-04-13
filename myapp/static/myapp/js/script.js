@@ -1,0 +1,1 @@
+console.log("django connected to js");

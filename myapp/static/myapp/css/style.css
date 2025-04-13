@@ -1,3 +1,18 @@
 body{
-    color: #333333;
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Main font "Winky Rough" */
+    font-family: "Winky Rough", sans-serif;
+    /* Colors */
+    background-color: #60116f;
+    color: #9fee90;
+    /* Height of the page */
+    height: 100vh;
+}
+
+.shedule{
+    font-family: "Fredericka the Great", serif;
 }
