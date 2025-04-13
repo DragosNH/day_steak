@@ -1,3 +1,15 @@
+:root {
+    /* Purples */
+    --purply-magenta: #48274f;
+    --darker-pruply: #38223c;
+    --lighter-purply: #57365e;
+
+    /* Yellows */
+    --yellowish-gren: #b7d8b0;
+    --darker-yellowish: #8bb782;
+    --lighter-yellowish: #f3f8f2;
+}
+
 body{
     /* Flexbox */
     display: flex;
@@ -7,12 +19,44 @@ body{
     /* Main font "Winky Rough" */
     font-family: "Winky Rough", sans-serif;
     /* Colors */
-    background-color: #60116f;
-    color: #9fee90;
+    background-color: var(--purply-magenta);
+    color: var(--yellowish-gren);
     /* Height of the page */
     height: 100vh;
 }
 
 .shedule{
     font-family: "Fredericka the Great", serif;
+}
+
+/* Container */
+.container{
+    /* Small styling */
+    border: 2px solid var(--yellowish-gren);
+    margin: 45px;
+    padding: 45px;
+    box-shadow: 25px 25px 15px var(--darker-pruply);
+
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .txt{
+        font-size: 18pt;
+    }
+    & .btn{
+        padding: 15px;
+        font-size: 14pt;
+        font-weight: bold;
+        background-color: var(--yellowish-gren);
+        color: var(--purply-magenta);
+        border: 5px solid var(--darker-yellowish);
+    }
+    & .btn:active{
+        color: var(--lighter-purply);
+        background-color: var(--lighter-yellowish);
+        border: 5px solid var(--yellowish-gren);
+        box-shadow: 0px 0px 10px 1px var(--lighter-yellowish);
+    }
 }
