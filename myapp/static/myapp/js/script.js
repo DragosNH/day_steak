@@ -22,18 +22,28 @@ camera.position.z = 5;
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#48274f');
 
-// Materials
+// --- Materials ---
+// -- Torus --
 const geometry = new THREE.TorusGeometry(1.4, 0.2, 16, 50);
 const material = new THREE.MeshBasicMaterial({ color: 0xb7d8b0, wireframe: true });
+// -- Spehere --
+const spehereGeometry = new THREE.SphereGeometry( 0.8, 32, 16 );
+const spehereMaterial = new THREE.MeshBasicMaterial({color: 0xb7d8b0, wireframe: true })
+
+// Shapes
 const hole = new THREE.Mesh(geometry, material);
+const spehere = new THREE.Mesh(spehereGeometry,spehereMaterial) 
+
 
 // Horizontal
 hole.rotation.x = Math.PI / 2;
 
-// Position the torus
+// Position of the elements
 hole.position.set(0, 6, -5);
+spehere.position.set(0, 6, -5);
 
 scene.add(hole);
+scene.add(spehere)
 
 // Handle resizing
 window.addEventListener('resize', () => {
@@ -51,6 +61,7 @@ function animate() {
     requestAnimationFrame(animate);
 
     hole.rotation.z += 0.01;
+    spehere.rotation.y += 0.01;
 
     renderer.render(scene, camera);
 }
