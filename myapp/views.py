@@ -8,3 +8,6 @@ def login(request):
 
 def signup(request):
     return render(request, 'myapp/signup.html')
+
+def forgot_password(request):
+    return render(request, 'myapp/forgotPassword.html')

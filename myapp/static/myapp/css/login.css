@@ -80,5 +80,13 @@ body{
         border: 5px solid var(--yellowish-gren);
         box-shadow: 0px 0px 10px 1px var(--lighter-yellowish);
     }
+
+    .forgot-pass{
+        margin: 0;
+        font-size: 14px;
+        & .click-here{
+            color: var(--lighter-yellowish);
+        }
+    }
     
 }
