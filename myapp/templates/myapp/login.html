@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule my day - Login</title>
+    <title>Schedule your day - Login</title>
     <link rel="stylesheet" href="{% static 'myapp/css/login.css' %}">
     <!-- --------- Fonts imports --------- -->
      <!-- Winky Rough -->
@@ -16,6 +16,9 @@
 <body>
     <!-- Background image -->
     <div id="threejs-background"></div>
+    <div class="empty-box"></div>
+
+    <!-- Container -->
     <div class="container">
         <!-- Title -->
         <h1 class="title">Login</h1>
@@ -30,6 +33,10 @@
         <button class="btn">Login</button>
         <p class="forgot-pass">Forgot your password? <a href="{% url 'forgotPassword' %}" class="click-here">Click Here!</a></p>
     </div>
+
+    <footer class="footer">
+        <p class="footer-txt">This website was made using: HTML, CSS, JavaScript, Three.js and Django</p>
+    </footer>
 
     <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
 </body>

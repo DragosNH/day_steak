@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule my day</title>
+    <title>Schedule your day</title>
     <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
     <!-- --------- Fonts imports --------- -->
-     <!-- Winky Rough -->
+    <!-- Winky Rough -->
     <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <!-- Fredericka the Great -->
@@ -17,15 +17,22 @@
 <body>
     <!-- Background image -->
     <div id="threejs-background"></div>
+    <div class="empty-box"></div>
+
     <!-- title -->
     <h1 class="title">Are you ready to "<span class="shedule">Schedule your day</span>"?</h1>
 
     <div class="container">
         <p class="txt">Do you already have an account?</p>
-        <button class="btn"><a href="{% url 'login' %}">Log In</a></button>
+        <a href="{% url 'login' %}"><button class="btn">Log In</button></a>
         <p class="txt">Don't have an account yet?</p>
-        <button class="btn"><a href="{% url 'signup' %}">Sign Up</a></button>
+        <a href="{% url 'signup' %}"><button class="btn">Sign Up</button></a>
     </div>
+
+
+    <footer class="footer">
+        <p class="footer-txt">This website was made using: HTML, CSS, JavaScript, Three.js and Django</p>
+    </footer>
 
     <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
 </body>

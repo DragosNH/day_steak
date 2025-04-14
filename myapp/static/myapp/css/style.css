@@ -21,8 +21,7 @@ body{
     /* Colors */
     color: var(--yellowish-gren);
     background-color: var(--purply-magenta);
-    /* Height of the page */
-    height: 100vh;
+    height: 100%;
 }
 
 .shedule{
@@ -64,6 +63,11 @@ body{
     }
 }
 
+.empty-box{
+    height: 100px;
+}
+
+/* Three.js canvas */
 #threejs-background {
     position: fixed;
     top: 0;
@@ -74,4 +78,24 @@ body{
     pointer-events: none; 
     overflow: hidden;
     box-shadow: 0 10px 10px 1px var(--darker-yellowish);
+}
+
+
+.footer{
+    background-color: var(--yellowish-gren);
+    height: 100px;
+    width: 100vw;
+    color: var(--lighter-purply);
+    margin: 50px 0 0 0;
+    padding-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 -10px 10px 1px var(--darker-yellowish);
+    
+
+    & .footer-txt{
+        text-align: center;
+        font-weight: bold;
+        font-size: 10pt;
+    }
 }
