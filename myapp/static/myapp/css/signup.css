@@ -20,8 +20,7 @@ body{
     font-family: "Winky Rough", sans-serif;
     /* Colors */
     color: var(--yellowish-gren);
-    /* Height of the page */
-    height: 100vh;
+    background-color: var(--purply-magenta);
 }
 
 .container{
@@ -83,13 +82,18 @@ body{
     
 }
 
+.empty-box{
+    height: 100px;
+}
+
 #threejs-background {
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1; 
     width: 100vw;
-    height: 100vh;
+    height: 100px;
     pointer-events: none; 
     overflow: hidden;
+    box-shadow: 0 10px 10px 1px var(--darker-yellowish);
 }
