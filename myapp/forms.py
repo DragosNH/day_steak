@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError  
 from django.forms.fields import EmailField  
 from django.forms.forms import Form  
+from django.contrib.auth.forms import AuthenticationForm
+from django import forms
 
 class CustomUserCreationForm(UserCreationForm):
     username = forms.CharField(
@@ -47,3 +49,13 @@ class CustomUserCreationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class CustomLoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({
+            'placeholder': 'Username'
+        })
+        self.fields['password'].widget.attrs.update({
+            'placeholder': 'Password'
+        })

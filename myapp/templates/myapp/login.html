@@ -1,18 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule your day - Login</title>
     <link rel="stylesheet" href="{% static 'myapp/css/login.css' %}">
     <!-- --------- Fonts imports --------- -->
-     <!-- Winky Rough -->
+    <!-- Winky Rough -->
     <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <!-- Fredericka the Great -->
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Background image -->
     <div id="threejs-background"></div>
@@ -22,16 +24,29 @@
     <div class="container">
         <!-- Title -->
         <h1 class="title">Login</h1>
-        <div class="username input-field">
-            <p class="input-txt">Username:</p>
-            <input type="text" name="username" placeholder="Username" />
-        </div>
-        <div class="password input-field">
-            <p class="input-txt">Password:</p>
-            <input type="password" name="password" placeholder="Pasword">
-        </div>
-        <button class="btn">Login</button>
-        <p class="forgot-pass">Forgot your password? <a href="{% url 'forgotPassword' %}" class="click-here">Click Here!</a></p>
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Username field -->
+            <div class="input-field">
+                <p class="input-txt">Username:</p>
+                <input type="text" name="{{ form.username.html_name }}"
+                    value="{{ form.username.value|default_if_none:'' }}" placeholder="Username" />
+                {{ form.username.errors }}
+            </div>
+
+            <!-- Password field -->
+            <div class="input-field">
+                <p class="input-txt">Password:</p>
+                <input type="password" name="{{ form.password.html_name }}" placeholder="Password" />
+                {{ form.password.errors }}
+            </div>
+
+            <!-- Password field -->
+            <button class="btn" type="submit">Login</button>
+        </form>
+
+        <p class="forgot-pass">Forgot your password? <a href="{% url 'forgotPassword' %}" class="click-here">Click
+                Here!</a></p>
     </div>
 
     <footer class="footer">
@@ -40,4 +55,5 @@
 
     <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
 </body>
+
 </html>

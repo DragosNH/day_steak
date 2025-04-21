@@ -9,6 +9,6 @@
     "\\myapp\\templates\\myapp",
     "\\steak_day"
   ],
-  "SelectedNode": "\\myapp\\views.py",
+  "SelectedNode": "\\myapp\\templates\\myapp\\mainPage.html",
   "PreviewInSolutionExplorer": false
 }

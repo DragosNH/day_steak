@@ -58,23 +58,27 @@
 
                     <!-- Username -->
                     <div class="input-field">
+                        <p class="input-txt">Username:</p>
                         <input type="text" name="{{ form.username.html_name }}"
                             value="{{ form.username.value|default_if_none:'' }}" placeholder="Username" />
                     </div>
 
                     <!-- Email -->
                     <div class="input-field">
+                        <p class="input-txt">E-mail:</p>
                         <input type="email" name="{{ form.email.html_name }}"
                             value="{{ form.email.value|default_if_none:'' }}" placeholder="E-mail address" />
                     </div>
 
                     <!-- Password1 -->
                     <div class="input-field">
+                        <p class="input-txt">Password:</p>
                         <input type="password" name="{{ form.password1.html_name }}" placeholder="Password" />
                     </div>
 
                     <!-- Password2 -->
                     <div class="input-field">
+                        <p class="input-txt">Confirm password:</p>
                         <input type="password" name="{{ form.password2.html_name }}" placeholder="Confirm password" />
                     </div>
 
