@@ -28,12 +28,21 @@
         <h1 class="title">{{user.username}}'s tasks for today</h1>
         {% endif %}
 
+        <div class="category-area">
+            <textarea name="add-item" class="category-txt" id="category-txt" placeholder="Add category..." value = " "></textarea>
+            <button class="btn">Add category</button>
+        </div>
+
+        <!-- Container for task items -->
+        <div id="task-list"></div>
+
     </div>
 
     <footer class="footer">
         <p class="footer-txt">This website was made using: HTML, CSS, JavaScript, Three.js and Django</p>
     </footer>
 
+    <script src="{% static 'myapp/js/toDoScript.js' %}"></script>
     <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
 </body>
 

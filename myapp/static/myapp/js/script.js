@@ -58,11 +58,11 @@ window.addEventListener('resize', () => {
 
 // Animate
 function animate() {
-    requestAnimationFrame(animate);
-
+    
     hole.rotation.z += 0.01;
     spehere.rotation.y += 0.01;
-
+    
     renderer.render(scene, camera);
+    requestAnimationFrame(animate);
 }
 animate();
