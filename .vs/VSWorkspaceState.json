@@ -3,10 +3,12 @@
     "",
     "\\myapp",
     "\\myapp\\static",
+    "\\myapp\\static\\myapp",
+    "\\myapp\\static\\myapp\\css",
     "\\myapp\\templates",
     "\\myapp\\templates\\myapp",
     "\\steak_day"
   ],
-  "SelectedNode": "\\steak_day\\settings.py",
+  "SelectedNode": "\\myapp\\views.py",
   "PreviewInSolutionExplorer": false
 }

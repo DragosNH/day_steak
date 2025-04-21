@@ -1,18 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule your day - Sign Up</title>
     <link rel="stylesheet" href="{% static 'myapp/css/signup.css' %}">
     <!-- --------- Fonts imports --------- -->
-     <!-- Winky Rough -->
+    <!-- Winky Rough -->
     <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <!-- Fredericka the Great -->
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Background image -->
     <div id="threejs-background"></div>
@@ -21,37 +23,76 @@
     <div class="container">
         <!-- Title -->
         <h1 class="title">Sign Up</h1>
+
         <!-- Username field -->
-        <div class="input-field">
-            <p class="input-txt">Chose a username</p>
-            <input type="text" name="username" placeholder="Username" />
-        </div>
-        <!-- First name field -->
-        <div class="input-field">
-            <p class="input-txt">What is your first name?</p>
-            <input type="text" name="first-name" placeholder="First name" />
-        </div>
-        <!-- Last name field -->
-        <div class="input-field">
-            <p class="input-txt">What is your last name?</p>
-            <input type="text" name="last-name" placeholder="Last name" />
-        </div>
-        <!-- E-mail address field -->
-        <div class="input-field">
-            <p class="input-txt">What is your e-mail address?</p>
-            <input type="text" name="email-address" placeholder="e-mail" />
-        </div>
-        <!-- Password field -->
-        <div class="input-field">
-            <p class="input-txt">Chose a password</p>
-            <input type="password" name="password" placeholder="Pasword">
-        </div>
-        <!-- Confirm password field -->
-        <div class="input-field">
-            <p class="input-txt">Confirm password</p>
-            <input type="password" name="confimr-password" placeholder="Confirm pasword">
-        </div>
-        <button class="btn">Sign Up</button>
+        {% load static %}
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Schedule your day - Sign Up</title>
+            <link rel="stylesheet" href="{% static 'myapp/css/signup.css' %}">
+            <!-- --------- Fonts imports --------- -->
+            <!-- Winky Rough -->
+            <link
+                href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
+                rel="stylesheet">
+            <!-- Fredericka the Great -->
+            <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+        </head>
+
+        <body>
+            <!-- Background image -->
+            <div id="threejs-background"></div>
+            <div class="empty-box"></div>
+            <!-- Container -->
+            <div class="container">
+                <!-- Title -->
+                <h1 class="title">Sign Up</h1>
+
+                <!-- Username field -->
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <!-- Username -->
+                    <div class="input-field">
+                        <input type="text" name="{{ form.username.html_name }}"
+                            value="{{ form.username.value|default_if_none:'' }}" placeholder="Username" />
+                    </div>
+
+                    <!-- Email -->
+                    <div class="input-field">
+                        <input type="email" name="{{ form.email.html_name }}"
+                            value="{{ form.email.value|default_if_none:'' }}" placeholder="E-mail address" />
+                    </div>
+
+                    <!-- Password1 -->
+                    <div class="input-field">
+                        <input type="password" name="{{ form.password1.html_name }}" placeholder="Password" />
+                    </div>
+
+                    <!-- Password2 -->
+                    <div class="input-field">
+                        <input type="password" name="{{ form.password2.html_name }}" placeholder="Confirm password" />
+                    </div>
+
+                    <button class="btn" type="submit">Sign Up</button>
+                </form>
+
+            </div>
+
+            <div class="bottom-box"></div>
+            <footer class="footer">
+                <p class="footer-txt">This website was made using: HTML, CSS, JavaScript, Three.js and Django</p>
+            </footer>
+
+            <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
+        </body>
+
+        </html>
+
     </div>
 
     <div class="bottom-box"></div>
@@ -61,4 +102,5 @@
 
     <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
 </body>
+
 </html>
