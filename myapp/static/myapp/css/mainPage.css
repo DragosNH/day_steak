@@ -1,0 +1,122 @@
+:root {
+    /* Purples */
+    --purply-magenta: #48274f;
+    --darker-pruply: #38223c;
+    --lighter-purply: #57365e;
+
+    /* Yellows */
+    --yellowish-gren: #b7d8b0;
+    --darker-yellowish: #8bb782;
+    --lighter-yellowish: #f3f8f2;
+}
+
+body{
+    
+    /* Main font "Winky Rough" */
+    font-family: "Winky Rough", sans-serif;
+    /* Colors */
+    color: var(--yellowish-gren);
+    background-color: var(--purply-magenta);
+    /* Height of the page */
+    height: 100vh;
+    width: 100vw;
+}
+
+.username{
+    text-align: end;
+    margin: 0 50px 0 0;
+}
+
+.container{
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 16pt;
+
+     /* flexbox */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+
+    & .title{
+        margin: 20px 20px 40px 20px;
+    }
+
+    & .input-field{
+        margin: 10px 20px 10px 20px;
+    }
+
+    & .input-txt{
+        padding: 0;
+        margin: 0;
+    }
+
+    & input{
+        margin: 0;
+        padding: 0;
+        height: 25px;
+        border: 1px solid var(--yellowish-gren);
+        background-color: var(--lighter-yellowish);
+        color: var(--purply-magenta);
+        font-size: 12pt;
+    }
+
+    & .btn{
+        margin: 40px 20px 20px 20px;
+        padding: 15px;
+        font-size: 14pt;
+        font-weight: bold;
+        background-color: var(--yellowish-gren);
+        border: 5px solid var(--darker-yellowish);
+        & a{
+            color: var(--purply-magenta);
+            text-decoration: none;
+        }
+    }
+    & .btn:active{
+        color: var(--lighter-purply);
+        background-color: var(--lighter-yellowish);
+        border: 5px solid var(--yellowish-gren);
+        box-shadow: 0px 0px 10px 1px var(--lighter-yellowish);
+    }
+    
+}
+
+.empty-box{
+    height: 150px;
+}
+
+#threejs-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    width: 100vw;
+    height: 100px;
+    pointer-events: none; 
+    overflow: hidden;
+    box-shadow: 0 10px 10px 1px var(--darker-yellowish);
+}
+
+.footer{
+    background-color: var(--yellowish-gren);
+    height: 100px;
+    width: 100vw;
+    color: var(--lighter-purply);
+    margin: 50px 0 0 0;
+    padding-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 -10px 10px 1px var(--darker-yellowish);
+    
+
+    & .footer-txt{
+        text-align: center;
+        font-weight: bold;
+        font-size: 10pt;
+    }
+}

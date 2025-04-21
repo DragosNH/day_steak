@@ -1,11 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule your day</title>
-    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/mainPage.css' %}">
     <!-- --------- Fonts imports --------- -->
     <!-- Winky Rough -->
     <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
@@ -13,7 +14,27 @@
     <!-- Fredericka the Great -->
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Loged in</h1>
+    <!-- Background image -->
+    <div id="threejs-background"></div>
+    <div class="empty-box"></div>
+    {% if user.is_authenticated %}
+        <p class="username">Hello, <strong>{{ user.username }}</strong></p>
+    {% endif %}
+
+    <div class="container">
+        {% if user.is_authenticated %}
+        <h1 class="title">{{user.username}}'s tasks for today</h1>
+        {% endif %}
+
+    </div>
+
+    <footer class="footer">
+        <p class="footer-txt">This website was made using: HTML, CSS, JavaScript, Three.js and Django</p>
+    </footer>
+
+    <script type="module" src="{% static 'myapp/js/script.js' %}"></script>
 </body>
+
 </html>
