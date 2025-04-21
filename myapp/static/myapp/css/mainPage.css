@@ -10,21 +10,23 @@
     --lighter-yellowish: #f3f8f2;
 }
 
-body{
-    
+body {
+
     /* Main font "Winky Rough" */
     font-family: "Winky Rough", sans-serif;
     /* Colors */
     color: var(--yellowish-gren);
     background-color: var(--purply-magenta);
+    margin: 0;
+    height: 100vh;
 }
 
-.username{
+.username {
     text-align: end;
     margin: 0 50px 0 0;
 }
 
-.container{
+.container {
     /* Flexbox */
     display: flex;
     flex-direction: column;
@@ -33,87 +35,100 @@ body{
 
     font-size: 16pt;
 
-    & .title{
+    & .title {
         margin: 20px 20px 40px 20px;
     }
 
-    & .category{
+    & .category {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    & .btn{
+    & .btn {
         margin: 30px;
         font-size: 14pt;
         font-weight: bold;
         background-color: var(--yellowish-gren);
         border: 5px solid var(--darker-yellowish);
-        & a{
+
+        & a {
             color: var(--purply-magenta);
             text-decoration: none;
         }
     }
-    & .btn:active{
+
+    & .btn:active {
         color: var(--lighter-purply);
         background-color: var(--lighter-yellowish);
         border: 5px solid var(--yellowish-gren);
         box-shadow: 0px 0px 10px 1px var(--lighter-yellowish);
     }
 
-    & .category-txt{
+    & .category-container {
+        border: 2px solid var(--yellowish-gren);
+        box-shadow: 25px 25px 15px var(--darker-pruply);
+        padding: 30px;
+        margin: 30px;
+    }
+
+    & .category-txt {
         width: 500px;
     }
 
-    & .category-title{
+    & .category-title {
         font-family: "Fredericka the Great", serif;
 
     }
 
-    & .newField{
+    & .newField {
         width: 300px;
     }
 
-    & .miniBtn{
+    & .miniBtn {
         margin: 30px;
         font-size: 10pt;
         font-weight: bold;
         background-color: var(--yellowish-gren);
         border: 5px solid var(--darker-yellowish);
     }
-    
+
 }
 
-.empty-box{
-    height: 150px;
+.empty-box {
+    height: 30px;
 }
 
 #threejs-background {
-    position: fixed;
+    position: static;
     top: 0;
     left: 0;
-    z-index: -1; 
+    z-index: 5;
     width: 100vw;
     height: 100px;
-    pointer-events: none; 
+    pointer-events: none;
     overflow: hidden;
     box-shadow: 0 10px 10px 1px var(--darker-yellowish);
+    padding: 0;
+    margin: 0;
 }
 
-.footer{
+.footer {
     background-color: var(--yellowish-gren);
     height: 100px;
-    width: 100vw;
     color: var(--lighter-purply);
     margin: 50px 0 0 0;
     padding-bottom: 0;
-    position: absolute;
+    position: relative;
     bottom: 0;
     box-shadow: 0 -10px 10px 1px var(--darker-yellowish);
-    
 
-    & .footer-txt{
-        text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    & .footer-txt {
         font-weight: bold;
         font-size: 10pt;
     }
