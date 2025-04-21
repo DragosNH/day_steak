@@ -69,6 +69,18 @@ body{
         font-family: "Fredericka the Great", serif;
 
     }
+
+    & .newField{
+        width: 300px;
+    }
+
+    & .miniBtn{
+        margin: 30px;
+        font-size: 10pt;
+        font-weight: bold;
+        background-color: var(--yellowish-gren);
+        border: 5px solid var(--darker-yellowish);
+    }
     
 }
 
