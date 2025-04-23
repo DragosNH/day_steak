@@ -3,13 +3,13 @@ let addCategory = document.querySelector(".category-txt");
 let taskList = document.querySelector("#task-list");
 let miniBtn = document.querySelector(".miniBtn");
 
-function createNewCategory(taskTitle){
+function createNewCategory(taskTitle) {
     // Create h2 title
     let newtitle = document.createElement("h2");
     newtitle.classList.add("category-title");
     newtitle.innerText = taskTitle;// clean the text area after pressed send
 
-    // Create textarea
+    // Create secondary textarea
     let textField = document.createElement("textarea");
     textField.classList.add("newField");
     addCategory.value = "";
@@ -20,7 +20,7 @@ function createNewCategory(taskTitle){
     secondaryBtn.classList.add("miniBtn");
 
     let task = document.createElement("input");
-    task.type = 'checkbox';
+    task.setAttribute("type", "checkbox");
 
     let categoryContainer = document.createElement("div");
     categoryContainer.classList.add("category-container");
@@ -29,14 +29,28 @@ function createNewCategory(taskTitle){
     categoryContainer.appendChild(secondaryBtn); // append secondaryBtn
     taskList.appendChild(categoryContainer); // append categoryContainer
 
-    
+    let newTaskList = document.createElement("div");
+    newTaskList.classList.add("tasks");
+    categoryContainer.appendChild(newTaskList)
+
+    secondaryBtn.addEventListener("click", function () {
+
+        let taskItem = document.createElement("input");
+        taskItem.type = "checkbox";
+
+        let label = document.createElement("label");
+        label.innerText = textField.value;
+        textField.value = "";
+
+        let wrapper = document.createElement("div");
+        wrapper.appendChild(taskItem);
+        wrapper.appendChild(label);
+
+        newTaskList.appendChild(wrapper);
+    });
 }
 
-submitCategory.addEventListener("click", function(){
+submitCategory.addEventListener("click", function () {
     let taskTitle = addCategory.value;
     createNewCategory(taskTitle);
 });
-
-// miniBtn.addEventListener("click", function(){
-//     console.log("clicked")
-// })
