@@ -25,12 +25,12 @@ function createNewCategory(taskTitle) {
     deleteContainer.classList.add("delete-conatiner");
     deleteContainer.innerText = "Delelete category";
 
-     // Div that contains the second text area, "add new task" button and "delete container button"
-     let miniContainer = document.createElement("div");
-     miniContainer.classList.add("mini-container");
-     miniContainer.appendChild(textField);
-     miniContainer.appendChild(secondaryBtn);
-     miniContainer.appendChild(deleteContainer);
+    // Div that contains the second text area, "add new task" button and "delete container button"
+    let miniContainer = document.createElement("div");
+    miniContainer.classList.add("mini-container");
+    miniContainer.appendChild(textField);
+    miniContainer.appendChild(secondaryBtn);
+    miniContainer.appendChild(deleteContainer);
 
     // Create checkbox
     let task = document.createElement("input");
@@ -39,7 +39,7 @@ function createNewCategory(taskTitle) {
     let categoryContainer = document.createElement("div");
     categoryContainer.classList.add("category-container");
     categoryContainer.appendChild(newtitle); // append newTitle
-    categoryContainer.appendChild(miniContainer); 
+    categoryContainer.appendChild(miniContainer);
     taskList.appendChild(categoryContainer); // append categoryContainer
 
     let newTaskList = document.createElement("div");
@@ -65,14 +65,40 @@ function createNewCategory(taskTitle) {
         wrapper.appendChild(label);
         wrapper.appendChild(deleteBtn);
 
-        deleteBtn.addEventListener("click", function(){
+        deleteBtn.addEventListener("click", function () {
             wrapper.remove();
         })
 
         newTaskList.appendChild(wrapper);
     });
 
-    deleteContainer.addEventListener("click", function(){
+    textField.addEventListener("keydown", function (e) {
+
+        if (e.key === 'Enter') {
+            let taskItem = document.createElement("input");
+            taskItem.type = "checkbox";
+
+            let label = document.createElement("label");
+            label.innerText = textField.value;
+            textField.value = "";
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("delete-btn");
+            deleteBtn.innerText = "Delete";
+
+            let wrapper = document.createElement("div");
+            wrapper.classList.add("wrapper");
+            wrapper.appendChild(taskItem);
+            wrapper.appendChild(label);
+            wrapper.appendChild(deleteBtn);
+
+            newTaskList.appendChild(wrapper);
+            e.preventDefault();
+        }
+
+    });
+
+    deleteContainer.addEventListener("click", function () {
         categoryContainer.remove();
 
     });
@@ -83,3 +109,12 @@ submitCategory.addEventListener("click", function () {
     let taskTitle = addCategory.value;
     createNewCategory(taskTitle);
 });
+
+
+addCategory.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        let taskTitle = addCategory.value;
+        createNewCategory(taskTitle);
+        e.preventDefault();
+    }
+})
