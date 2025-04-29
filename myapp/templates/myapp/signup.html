@@ -27,7 +27,7 @@
         <h1 class="title">Sign Up</h1>
 
         <!-- Username field -->
-        <form method="POST">
+        <form method="POST" class="forms">
             {% csrf_token %}
 
             <!-- Username -->
@@ -57,6 +57,7 @@
             </div>
 
             <button class="btn" type="submit">Sign Up</button>
+            <p class="account-txt">Already have an account? <a class="account-link" href="{% url 'login' %}">Login</a></p>
         </form>
 
 
