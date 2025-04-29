@@ -21,6 +21,7 @@ body{
     /* Colors */
     color: var(--yellowish-gren);
     background-color: var(--purply-magenta);
+    margin: 0;
 }
 
 .container{
@@ -100,19 +101,23 @@ body{
 
 
 
-.footer{
+.footer {
     background-color: var(--yellowish-gren);
     height: 100px;
     width: 100vw;
     color: var(--lighter-purply);
+    margin: 50px 0 0 0;
     padding-bottom: 0;
     position: relative;
     bottom: 0;
     box-shadow: 0 -10px 10px 1px var(--darker-yellowish);
-    
 
-    & .footer-txt{
-        text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    & .footer-txt {
         font-weight: bold;
         font-size: 10pt;
     }
