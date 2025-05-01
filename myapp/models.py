@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models import Model
+from django.contrib.auth.models import User
+
 
 class Users(models.Model):
     username = models.CharField(max_length = 15, unique = True, blank = False)
@@ -9,7 +11,7 @@ class Users(models.Model):
     password = models.CharField(max_length=25, blank=False)
 
 class Category(models.Model):
-    user = models.ForeignKey(Users, on_delete=models.CASCADE, related_name='categories')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
