@@ -7,3 +7,20 @@ class Users(models.Model):
     last_name = models.CharField(max_length= 35, blank = False)
     emails = models.EmailField(max_length=50,  blank=False, unique=True)
     password = models.CharField(max_length=25, blank=False)
+
+class Category(models.Model):
+    user = models.ForeignKey(Users, on_delete=models.CASCADE, related_name='categories')
+    title = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+class Task(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='tasks')
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.description[:30]  

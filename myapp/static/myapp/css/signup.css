@@ -92,7 +92,7 @@ body{
         font-size: 12pt;
 
         & .account-link{
-            color: var(--yellowish-gren);
+            color: var(--lighter-yellowish);
             font-weight: bold;
         }
     }
